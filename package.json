@@ -1,0 +1,22 @@
+{
+  "name": "scraping-101",
+  "version": "1.0.0",
+  "description": "Workshop i e2e-testing og scraping.",
+  "main": "index.js",
+  "scripts": {},
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maciejost/scraping-101.git"
+  },
+  "author": "Maciej Ostrowski",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maciejost/scraping-101/issues"
+  },
+  "homepage": "https://github.com/maciejost/scraping-101#readme",
+  "dependencies": {
+    "chalk": "^5.4.1",
+    "open": "^10.1.0"
+  }
+}
