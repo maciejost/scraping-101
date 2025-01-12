@@ -11,6 +11,8 @@ const renderList = (items, selectedIndex, scrollOffset) => {
 
   if (scrollOffset > 0) {
     console.log(chalk.dim("↑ Flere artikler over"));
+  } else {
+    console.log();
   }
 
   visibleItems.forEach((item, index) => {
@@ -24,10 +26,19 @@ const renderList = (items, selectedIndex, scrollOffset) => {
 
   if (scrollOffset + VIEWPORT_SIZE < items.length) {
     console.log(chalk.dim("↓ Flere artikler under"));
+  } else {
+    console.log();
   }
 };
 
-const selectFromList = (items) => {
+/**
+ * Viser en liste med lenker i terminalen, og lar brukeren åpne de i nettleseren.
+ * @param {{
+   title: string
+   href: string
+ }[]} items Lenker som skal vises i terminalen
+ */
+export const selectFromList = (items) => {
   readline.emitKeypressEvents(process.stdin);
   process.stdin.setRawMode(true);
 
@@ -76,44 +87,3 @@ const selectFromList = (items) => {
     renderList(items, selectedIndex, scrollOffset);
   });
 };
-
-function main() {
-  const links = [
-    { title: "Google", href: "https://www.google.com" },
-    { title: "GitHub", href: "https://www.github.com" },
-    { title: "Stack Overflow", href: "https://stackoverflow.com" },
-    { title: "OpenAI", href: "https://www.openai.com" },
-    { title: "Google", href: "https://www.google.com" },
-    { title: "GitHub", href: "https://www.github.com" },
-    { title: "Stack Overflow", href: "https://stackoverflow.com" },
-    { title: "OpenAI", href: "https://www.openai.com" },
-    { title: "Google", href: "https://www.google.com" },
-    { title: "GitHub", href: "https://www.github.com" },
-    { title: "Stack Overflow", href: "https://stackoverflow.com" },
-    { title: "OpenAI", href: "https://www.openai.com" },
-    { title: "Google", href: "https://www.google.com" },
-    { title: "GitHub", href: "https://www.github.com" },
-    { title: "Stack Overflow", href: "https://stackoverflow.com" },
-    { title: "OpenAI", href: "https://www.openai.com" },
-    { title: "Google", href: "https://www.google.com" },
-    { title: "GitHub", href: "https://www.github.com" },
-    { title: "Stack Overflow", href: "https://stackoverflow.com" },
-    { title: "OpenAI", href: "https://www.openai.com" },
-    { title: "Google", href: "https://www.google.com" },
-    { title: "GitHub", href: "https://www.github.com" },
-    { title: "Stack Overflow", href: "https://stackoverflow.com" },
-    { title: "OpenAI", href: "https://www.openai.com" },
-    { title: "Google", href: "https://www.google.com" },
-    { title: "GitHub", href: "https://www.github.com" },
-    { title: "Stack Overflow", href: "https://stackoverflow.com" },
-    { title: "OpenAI", href: "https://www.openai.com" },
-    { title: "Google", href: "https://www.google.com" },
-    { title: "GitHub", href: "https://www.github.com" },
-    { title: "Stack Overflow", href: "https://stackoverflow.com" },
-    { title: "OpenAI", href: "https://www.openai.com" },
-  ];
-
-  selectFromList(links);
-}
-
-main();
