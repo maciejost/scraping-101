@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "Workshop i e2e-testing og scraping.",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "ui": "npx playwright test --ui"
+  },
   "type": "module",
   "repository": {
     "type": "git",
@@ -17,6 +19,7 @@
   "homepage": "https://github.com/maciejost/scraping-101#readme",
   "dependencies": {
     "chalk": "^5.4.1",
-    "open": "^10.1.0"
+    "open": "^10.1.0",
+    "playwright": "^1.49.1"
   }
 }
